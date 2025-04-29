@@ -1,0 +1,238 @@
+/* ==== Mejorado: Paleta de colores “Biochic” ==== */
+:root {
+  --bg-page: #fcfaf4;
+  --bg-header: #2f4f2f;
+  --txt-primary: #333333;
+  --txt-light: #f5f5f0;
+  --accent: #6a994e;
+  --accent-dark: #386641;
+  --accent-light: #a7c957;
+  --border-radius: 0.75rem;
+  --transition: 0.4s ease;
+  --shadow-light: rgba(50, 50, 50, 0.1);
+  --shadow-dark: rgba(0, 0, 0, 0.15);
+  --glow-green: 0 0 8px rgba(167, 201, 87, 0.6);
+}
+
+/* ==== Fuentes elegantes ==== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Raleway:wght@300;400;500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: var(--bg-page);
+  color: var(--txt-primary);
+  line-height: 1.7;
+  scroll-behavior: smooth;
+  animation: fadeInBody 1.5s ease-in-out;
+}
+
+@keyframes fadeInBody {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ==== Header + Glowing Hover ==== */
+.header {
+  background: var(--bg-header);
+  padding: 1.25rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 12px var(--shadow-dark);
+  animation: slideDown 0.8s ease-out;
+}
+
+.header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.75rem;
+  color: var(--txt-light);
+  text-align: center;
+  letter-spacing: 1px;
+  margin-bottom: 0.25rem;
+  text-shadow: var(--glow-green);
+}
+
+/* ==== Navbar con animación en hover y entrada ==== */
+.navbar-menu {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.navbar-menu li a {
+  font-weight: 500;
+  color: var(--txt-light);
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--border-radius);
+  transition: all var(--transition);
+}
+
+.navbar-menu li a:hover,
+.navbar-menu li a.active {
+  background: var(--accent);
+  box-shadow: var(--glow-green);
+  transform: translateY(-2px) scale(1.06);
+}
+
+/* ==== Jumbotron ==== */
+.jumbotron {
+  position: relative;
+  overflow: hidden;
+  color: var(--txt-light);
+  text-align: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, rgba(47,79,47,0.85), rgba(38,70,38,0.85)),
+              url('../images/jumbotron-bg.jpg') center/cover no-repeat;
+  backdrop-filter: blur(4px);
+  animation: fadeIn 1.2s ease-in;
+}
+
+.jumbotron .display-4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  animation: fadeUp 1s ease-out;
+}
+
+.jumbotron .lead {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+  animation: fadeUp 1.2s ease-out;
+}
+
+.jumbotron .btn {
+  background-color: var(--accent-light);
+  color: var(--txt-primary);
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  box-shadow: 0 4px 12px var(--shadow-light);
+  transition: all var(--transition);
+  animation: fadeUp 1.4s ease-out;
+}
+
+.jumbotron .btn:hover {
+  background-color: var(--accent);
+  transform: scale(1.1);
+  box-shadow: var(--glow-green);
+}
+
+/* ==== Contenedor suave ==== */
+.container {
+  max-width: 1080px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+/* ==== Recuadros tipo tarjeta 3D ==== */
+.recuadro {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: var(--border-radius);
+  padding: 1.75rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 3px 18px var(--shadow-light);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  backdrop-filter: blur(6px);
+  transform-style: preserve-3d;
+}
+
+.recuadro:hover {
+  transform: rotateX(4deg) rotateY(-2deg) scale(1.02);
+  box-shadow: 0 8px 28px var(--shadow-dark);
+}
+
+.recuadro h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--accent-dark);
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+/* ==== Listas mejoradas ==== */
+.container ul {
+  list-style: none;
+}
+
+.container ul li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 1rem;
+  transition: color var(--transition), transform 0.3s ease;
+}
+
+.container ul li::before {
+  content: '🌿';
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  font-size: 1.2rem;
+  color: var(--accent-light);
+}
+
+.container ul li:hover {
+  color: var(--accent-dark);
+  transform: translateX(4px);
+}
+
+/* ==== Imágenes interactivas ==== */
+.img-fluid {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 12px var(--shadow-light);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.img-fluid:hover {
+  transform: translateY(-3px) scale(1.02) rotateZ(-0.5deg);
+  box-shadow: 0 6px 18px var(--shadow-dark);
+}
+
+/* ==== Pie de página ==== */
+.footer {
+  background-color: var(--bg-header);
+  color: var(--txt-light);
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  margin-top: 4rem;
+  border-top: 1px solid var(--accent);
+  animation: fadeIn 2s ease;
+}
+
+.footer p a {
+  color: var(--accent-light);
+  text-decoration: underline;
+}
+
+.footer p a:hover {
+  color: var(--accent);
+}
+
+/* ==== Keyframes extra ==== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
